@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+	--sidebar-bg: #ffffff;
+	--accent: #25346f;
+}
+
+html,body,#root, #app { height: 100%; }
+body { margin: 0; font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: #f8fafc; color: #111827; }
+
+/* small helper for sticky bottom */
+.nav-bottom-sticky { position: absolute; left: 0; right: 0; bottom: 380px; padding: 0 18px; }
+
+.sidebar-wide { width: 18rem; }
+
+/* app wrapper when sidebar is present */
+.app-with-sidebar { margin-left: 292px; }
+
+@media (max-width: 768px) {
+	.app-with-sidebar { margin-left: 0; }
+	nav.sidebar-wide { position: relative; width: 100%; height: auto; }
+	.nav-bottom-sticky { position: static; bottom: auto; padding: 0 12px; }
+}
