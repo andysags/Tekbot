@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Play, Users, Award, BookOpen } from 'lucide-react';
+import { Play } from 'lucide-react';
 
 export const Home = (): JSX.Element => {
   return (
@@ -53,62 +53,95 @@ export const Home = (): JSX.Element => {
               />
             </div>
           </div>
-
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-[#eef6ff] rounded-full flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="w-8 h-8 text-[#2d9bf0]" />
-              </div>
-              <h3 className="text-xl font-bold text-[#25346f] mb-3">Cours Interactifs</h3>
-              <p className="text-gray-600">
-                Apprenez avec des cours structurés et des exercices pratiques adaptés à votre niveau.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-[#eef6ff] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-[#2d9bf0]" />
-              </div>
-              <h3 className="text-xl font-bold text-[#25346f] mb-3">Communauté Active</h3>
-              <p className="text-gray-600">
-                Rejoignez une communauté passionnée et partagez vos projets avec d'autres apprenants.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
-              <div className="w-16 h-16 bg-[#eef6ff] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="w-8 h-8 text-[#2d9bf0]" />
-              </div>
-              <h3 className="text-xl font-bold text-[#25346f] mb-3">Certifications</h3>
-              <p className="text-gray-600">
-                Obtenez des certifications reconnues pour valider vos compétences en robotique.
+          <br></br>
+          <br></br>
+          {/* Notre Mission Section */}
+          <div className="mb-16">
+            <div className="max-w-3xl mx-auto text-center py-10 px-6 ">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[#25346f] mb-4">
+                Notre mission : <span className="text-[#5C5CBD]">Démocratiser la Robotique</span>
+              </h2>
+              <p className="text-gray-600" style={{ fontFamily: 'Inter, system-ui, -apple-system, Roboto, "Helvetica Neue", Arial', fontSize: 18 }}>
+                Tekbot Academy s'engage à rendre l'apprentissage de la robotique accessible et
+                stimulant pour tous, des débutants aux experts. Nous croyons que la pratique est la clé
+                de la maîtrise.
               </p>
             </div>
           </div>
+          <br></br>
+          <br></br>
+          <br></br>
+
+          {/* Pourquoi Choisir Tekbot Academy */}
+          <div className="max-w-7xl mx-auto mb-16 px-4">
+            <h2 className="text-center text-3xl md:text-4xl font-extrabold text-[#25346f] mb-8">
+              Pourquoi Choisir Tekbot <span className="text-[#5C5CBD]">Academy</span> ?
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+                <div className="flex items-center justify-center mx-auto mb-4" style={{ width: 80, height: 80 }}>
+                  <img src="/Vector.png" alt="Modules" className="w-12 h-12 md:w-16 md:h-16" />
+                </div>
+                <h3 className="text-lg font-bold text-[#25346f] mb-2">Modules Interactifs</h3>
+                <p className="text-gray-800 text-lg md:text-xl">
+                  Apprenez l'électronique, la mécanique et la programmation robotique à travers des leçons
+                  interactives et progressives.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+                <div className="flex items-center justify-center mx-auto mb-4" style={{ width: 80, height: 80 }}>
+                  <img src="/Vector(1).png" alt="Simulateurs" className="w-12 h-12 md:w-16 md:h-16" />
+                </div>
+                <h3 className="text-lg font-bold text-[#25346f] mb-2">Simulateurs Intégrés</h3>
+                <p className="text-gray-800 text-lg">
+                  Mettez vos connaissances en pratique avec Webots et Gazebo, nos simulateurs robotiques avancés.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
+                <div className="flex items-center justify-center mx-auto mb-4" style={{ width: 80, height: 80 }}>
+                  <img src="/Vector(2).png" alt="Communauté" className="w-12 h-12 md:w-16 md:h-16" />
+                </div>
+                <h3 className="text-lg font-bold text-[#25346f] mb-2">Communauté Active</h3>
+                <p className="text-gray-800 text-lg">
+                  Échangez avec d'autres passionnés de robotique, posez vos questions et collaborez sur des projets.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-[#25346f] text-white py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-[#2d9bf0] mb-2">1000+</div>
-              <div className="text-lg">Étudiants actifs</div>
+      {/* CTA Robot Section */}
+      <section className="relative py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/Rectangle 10.png')" }} />
+        {/* overlay for contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2e2a86]/80 via-[#5C5CBD]/60 to-transparent" />
+        <div className="relative max-w-7xl mx-auto px-6 flex items-center justify-center ">
+          <div className="w-full flex items-center relative">
+            <img src="/robot.png" alt="Robot" className="hidden md:block absolute object-contain pointer-events-none select-none z-0" style={{ width: '394px', height: '539px', left: '-140px' }} />
+
+            <div className="relative z-10 text-center text-white mx-auto px-6 py-12 max-w-3xl md:pl-[400px] lg:pl-[460px] md:pr-[340px] lg:pr-[400px]">
+              <h2 className="text-4xl font-extrabold mb-4">Prêt à Construire Votre Avenir ?</h2>
+              <p className="text-white opacity-95 mb-6" style={{ fontFamily: 'Inter, system-ui, -apple-system, Roboto, "Helvetica Neue", Arial', fontSize: 18}}>
+                Rejoignez des milliers d'apprenants et lancez-vous dans l'univers fascinant de la
+                robotique. Des fondamentaux aux projets avancés, tout est à portée de main.
+              </p>
+              <div className="flex gap-4 justify-center">
+                <Link to="/courses" className="bg-[#57b3f7] hover:bg-[#2d9bf0] text-white rounded-lg px-6 py-3 font-semibold shadow">S'inscrire Maintenant</Link>
+                <Link to="/courses" className="border border-white/60 text-white rounded-lg px-6 py-3 font-medium">Voir tous les Cours</Link>
+              </div>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-[#2d9bf0] mb-2">50+</div>
-              <div className="text-lg">Cours disponibles</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-[#2d9bf0] mb-2">95%</div>
-              <div className="text-lg">Taux de satisfaction</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-[#2d9bf0] mb-2">24/7</div>
-              <div className="text-lg">Support disponible</div>
-            </div>
+
+            <img
+              src="/bras.png"
+              alt="Bras robot"
+              className="hidden md:block absolute object-contain pointer-events-none select-none z-0"
+              style={{ width: '454px', height: '409px', right: '-400px', top: '-200px', transform: 'rotate(02.42deg)' }}
+            />
           </div>
         </div>
       </section>
