@@ -15,7 +15,6 @@ body { margin: 0; font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', R
 .sidebar-wide { width: 18rem; }
 
 /* app wrapper when sidebar is present */
-.app-with-sidebar { margin-left: 292px; }
 
 @media (max-width: 768px) {
 	.app-with-sidebar { margin-left: 0; }

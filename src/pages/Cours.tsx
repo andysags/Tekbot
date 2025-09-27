@@ -1,158 +1,183 @@
 import React from 'react';
-import { Clock, Users, Star, Play } from 'lucide-react';
+import { Clock, Star, Play, Search, SlidersHorizontal, ChevronDown, BookOpen, Circle, CheckCircle2 } from 'lucide-react';
 
 export const Courses = (): JSX.Element => {
   const courses = [
     {
       id: 1,
-      title: "Introduction à la Robotique",
-      description: "Découvrez les bases de la robotique et construisez votre premier robot.",
-      duration: "8 heures",
-      students: 245,
-      rating: 4.8,
-      level: "Débutant",
-      image: "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=400",
-      price: "Gratuit"
+      title: 'Initiation au HTML',
+      subtitle: 'Bases du web en 2 heures',
+      description: 'Apprenez les fondamentaux du HTML pour créer vos premières pages web.',
+      status: 'Nouveau',
+      progress: 45,
+      duration: '2h',
+      lessons: 8,
+      level: 'Débutant',
+      action: 'Continuer'
     },
     {
       id: 2,
-      title: "Programmation Arduino",
-      description: "Maîtrisez la programmation des microcontrôleurs Arduino pour vos projets.",
-      duration: "12 heures",
-      students: 189,
-      rating: 4.9,
-      level: "Intermédiaire",
-      image: "https://images.pexels.com/photos/159298/gears-cogs-machine-machinery-159298.jpeg?auto=compress&cs=tinysrgb&w=400",
-      price: "49€"
+      title: 'CSS Avancé',
+      subtitle: 'Maîtrisez les animations',
+      description: 'Créez des interfaces modernes avec CSS Grid, Flexbox et animations.',
+      status: null,
+      progress: 0,
+      duration: '4h',
+      lessons: 12,
+      level: 'Avancé',
+      action: 'Commencer'
     },
     {
       id: 3,
-      title: "Intelligence Artificielle et Robotique",
-      description: "Intégrez l'IA dans vos robots pour des comportements intelligents.",
-      duration: "16 heures",
-      students: 156,
-      rating: 4.7,
-      level: "Avancé",
-      image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400",
-      price: "99€"
-    },
-    {
-      id: 4,
-      title: "Robotique Mobile",
-      description: "Construisez des robots autonomes capables de se déplacer et naviguer.",
-      duration: "14 heures",
-      students: 203,
-      rating: 4.6,
-      level: "Intermédiaire",
-      image: "https://images.pexels.com/photos/8386434/pexels-photo-8386434.jpeg?auto=compress&cs=tinysrgb&w=400",
-      price: "79€"
-    },
-    {
-      id: 5,
-      title: "Capteurs et Actionneurs",
-      description: "Apprenez à utiliser différents capteurs et actionneurs dans vos projets.",
-      duration: "10 heures",
-      students: 167,
-      rating: 4.8,
-      level: "Intermédiaire",
-      image: "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=400",
-      price: "59€"
-    },
-    {
-      id: 6,
-      title: "Projet Final : Robot Complet",
-      description: "Mettez en pratique toutes vos connaissances dans un projet complet.",
-      duration: "20 heures",
-      students: 89,
-      rating: 4.9,
-      level: "Avancé",
-      image: "https://images.pexels.com/photos/8386422/pexels-photo-8386422.jpeg?auto=compress&cs=tinysrgb&w=400",
-      price: "149€"
+      title: 'Design System',
+      subtitle: 'Cohérence visuelle',
+      description: 'Construisez un système de design complet pour vos projets.',
+      status: 'Terminé',
+      progress: 100,
+      duration: '3h',
+      lessons: 10,
+      level: 'Intermédiaire',
+      action: 'Continuer'
     }
   ];
 
   const getLevelColor = (level: string) => {
     switch (level) {
-      case 'Débutant': return 'bg-green-100 text-green-800';
-      case 'Intermédiaire': return 'bg-yellow-100 text-yellow-800';
-      case 'Avancé': return 'bg-red-100 text-red-800';
+      case 'Débutant': return 'bg-emerald-100 text-emerald-800';
+      case 'Intermédiaire': return 'bg-amber-100 text-amber-800';
+      case 'Avancé': return 'bg-rose-100 text-rose-800';
       default: return 'bg-gray-100 text-gray-800';
     }
   };
 
+  const getStatusBadge = (status: string | null) => {
+    if (!status) return '';
+    if (status === 'Nouveau') return 'bg-fuchsia-100 text-fuchsia-700';
+    if (status === 'Terminé') return 'bg-emerald-100 text-emerald-700';
+    return 'bg-gray-100 text-gray-700';
+  };
+
   return (
-    <div className="min-h-screen bg-neutral-50 pt-8 ml-64">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="font-['Outfit'] font-extrabold text-4xl md:text-5xl mb-4">
-            <span className="text-[#25346f]">Nos </span>
-            <span className="text-[#5c5cbd]">Cours</span>
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Découvrez notre catalogue complet de cours de robotique, 
-            du niveau débutant aux projets les plus avancés.
-          </p>
-        </div>
+    <div className="min-h-screen bg-neutral-50 ml-64">
+      <div className="max-w-7xl mx-auto px-4 pb-10">
+        {/* Header */}
+        <br />
+        <br />
+        <h1 className="font-['Inter'] font-bold text-3xl text-[#25346f] mb-4">Modules</h1>
+        <br />
+        {/* Search and Filters Container */}
+        <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm mb-6">
+          {/* Search */}
+          <div className="relative mb-6">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-blue-500 " />
+            <input
+              type="text"
+              placeholder='Rechercher un module, ex : "HTML", "Design"...'
+              className="w-full pl-12 pr-4 py-3 rounded-xl bg-blue-50 border border-blue-200 focus:outline-none focus:ring-2 focus:ring-violet-200 focus:border-violet-300 text-gray-700 placeholder:text-gray-500 font-['Inter']"
+            />
+          </div>
 
-        {/* Filters */}
-        <div className="flex flex-wrap gap-4 mb-8 justify-center">
-          <button className="px-6 py-2 bg-[#5c5cbd] text-white rounded-full font-medium">
-            Tous les cours
-          </button>
-          <button className="px-6 py-2 bg-white text-[#25346f] rounded-full font-medium border border-gray-200 hover:bg-gray-50">
-            Débutant
-          </button>
-          <button className="px-6 py-2 bg-white text-[#25346f] rounded-full font-medium border border-gray-200 hover:bg-gray-50">
-            Intermédiaire
-          </button>
-          <button className="px-6 py-2 bg-white text-[#25346f] rounded-full font-medium border border-gray-200 hover:bg-gray-50">
-            Avancé
-          </button>
-        </div>
+          {/* Filters row */}
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3 text-[#C084FC]">
+              <SlidersHorizontal className="w-4 h-4" />
+              <span className="font-['Inter'] font-semibold text-sm">Filtres</span>
+            </div>
 
-        {/* Courses Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courses.map((course) => (
-            <div key={course.id} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+            {/* Level filters */}
+            <div className="flex flex-wrap gap-3">
+              <button className="px-4 py-2 rounded-lg text-sm font-['Inter'] font-semibold bg-[#C084FC] text-white">Tous</button>
+              <button className="px-4 py-2 rounded-lg text-sm font-['Inter'] font-semibold bg-white border border-gray-200 text-[#C084FC] hover:bg-gray-50">Débutant</button>
+              <button className="px-4 py-2 rounded-lg text-sm font-['Inter'] font-semibold bg-white border border-gray-200 text-[#C084FC] hover:bg-gray-50">Intermédiaire</button>
+              <button className="px-4 py-2 rounded-lg text-sm font-['Inter'] font-semibold bg-white border border-gray-200 text-[#C084FC] hover:bg-gray-50">Avancé</button>
+            </div>
+
+            {/* Extra filters */}
+            <div>
+              <button className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-['Inter'] font-semibold bg-white border border-gray-200 text-[#C084FC] hover:bg-gray-50">
+               { 'Durée < 2h'  }
+              </button>
+            </div>
+
+            {/* Category select */}
+            <div className="w-full">
+              <label className="block text-sm font-['Inter'] font-semibold text-gray-600 mb-2">Catégorie</label>
               <div className="relative">
-                <img 
-                  src={course.image} 
-                  alt={course.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${getLevelColor(course.level)}`}>
-                    {course.level}
+                <select className="w-full appearance-none bg-amber-400 text-[#25346f] font-['Inter'] font-semibold px-4 py-3 pr-10 rounded-lg shadow-sm focus:outline-none border border-amber-500">
+                  <option>Tous</option>
+                </select>
+                <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#25346f]" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {courses.map((course) => (
+            <div key={course.id} className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+              <div className="p-6 relative">
+                {/* Favorite icon */}
+                <button className="absolute right-4 top-4 text-gray-300 hover:text-violet-500">
+                  <Star className="w-5 h-5" />
+                </button>
+
+                {/* Status badge */}
+                {course.status && (
+                  <span className={`inline-block text-xs font-['Inter'] font-semibold px-3 py-1 rounded-full ${
+                    course.status === 'Nouveau' ? 'bg-fuchsia-100 text-fuchsia-700' : 'bg-emerald-100 text-emerald-700'
+                  }`}>
+                    {course.status}
+                  </span>
+                )}
+
+                {/* Title */}
+                <h3 className="mt-3 text-xl font-['Inter'] font-bold text-[#5C5CBD]">{course.title}</h3>
+                <p className="text-[#8EA8D4] font-['Inter'] font-medium">{course.subtitle}</p>
+
+                {/* Description */}
+                <p className="mt-3 text-sm font-['Inter'] text-gray-600 leading-relaxed">
+                  {course.description}
+                </p>
+
+                {/* Progress */}
+                <div className="mt-4">
+                  <div className="flex items-center justify-between text-sm font-['Inter'] text-gray-600 mb-2">
+                    <span>Progression</span>
+                    <span className="text-violet-700 font-semibold">{course.progress}% complété</span>
+                  </div>
+                  <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                    <div className="h-full bg-violet-500 rounded-full" style={{ width: `${course.progress}%` }} />
+                  </div>
+                </div>
+
+                {/* Meta */}
+                <div className="mt-4 flex flex-wrap items-center gap-3 text-sm font-['Inter'] text-gray-600">
+                  <span className="inline-flex items-center gap-1"><Clock className="w-4 h-4" /> Durée : {course.duration}</span>
+                  <span className="inline-flex items-center gap-1"><BookOpen className="w-4 h-4" /> {course.lessons} leçons</span>
+                  <span className={`inline-flex items-center gap-2 px-2 py-1 rounded-full text-xs font-semibold ${
+                    course.level === 'Débutant' ? 'bg-emerald-100 text-emerald-800' :
+                    course.level === 'Intermédiaire' ? 'bg-amber-100 text-amber-800' :
+                    'bg-rose-100 text-rose-800'
+                  }`}>
+                    Niveau : {course.level}
                   </span>
                 </div>
-                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full">
-                  <span className="font-bold text-[#25346f]">{course.price}</span>
+
+                {/* Actions */}
+                <div className="mt-5 flex items-center gap-3">
+                  <button className="flex-1 inline-flex items-center justify-center gap-2 bg-violet-600 text-white px-4 py-3 rounded-lg font-['Inter'] font-semibold hover:bg-violet-700 transition-colors">
+                    {course.progress === 100 ? (
+                      <CheckCircle2 className="w-4 h-4" />
+                    ) : (
+                      <Play className="w-4 h-4" />
+                    )}
+                    {course.action}
+                  </button>
+                  <button className="w-10 h-10 inline-flex items-center justify-center rounded-full border border-gray-200 text-violet-600 hover:bg-violet-50">
+                    <Circle className="w-4 h-4" />
+                  </button>
                 </div>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[#25346f] mb-2">{course.title}</h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">{course.description}</p>
-                
-                <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    {course.duration}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    {course.students}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                    {course.rating}
-                  </div>
-                </div>
-                
-                <button className="w-full bg-[#5c5cbd] text-white py-3 rounded-lg font-semibold hover:bg-[#4a4a9d] transition-colors flex items-center justify-center gap-2">
-                  <Play className="w-4 h-4" />
-                  Commencer le cours
-                </button>
               </div>
             </div>
           ))}

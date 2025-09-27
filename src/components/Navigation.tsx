@@ -14,7 +14,7 @@ export const Navigation = (): JSX.Element => {
   ];
 
   return (
-  <nav className="fixed left-0 top-0 bg-[C7C7C7] shadow-lg border-r border-gray-100 z-50 sidebar-wide" style={{ width: 292, height: '100vh' }}>
+  <nav className="fixed left-0 top-0 bg-[C7C7C7] shadow-lg border-r border-gray-100 z-50 sidebar-wide" style={{ width: 350, height: '100vh' }}>
       <div className="flex flex-col h-full">
         {/* Logo */}
       <div className="px-6 border-b border-gray-100" style={{ paddingTop: 12, paddingBottom: 12 }}>
