@@ -19,9 +19,12 @@ export const Home = (): JSX.Element => {
                 <span className="text-[#5C5CBD]">Academy</span>
               </h1>
 
-              <p className="text-gray-600 mb-10 max-w-xl" style={{ fontFamily: 'Inter, system-ui, -apple-system, Roboto, "Helvetica Neue", Arial', fontSize: 20 }}>
-                Votre parcours vers l'excellence en robotique commence ici. Accédez à des cours
-                complets, des simulateurs pratiques et une communauté inspirante.
+              <p
+                className="text-gray-600 mb-10 max-w-xl"
+                style={{ fontFamily: 'Inter, system-ui, -apple-system, Roboto, \"Helvetica Neue\", Arial', fontSize: 20 }}
+              >
+                Votre parcours vers l'excellence en robotique commence ici. Accédez à des cours complets, des simulateurs
+                pratiques et une communauté inspirante.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 items-start">
@@ -53,24 +56,22 @@ export const Home = (): JSX.Element => {
               />
             </div>
           </div>
-          <br></br>
-          <br></br>
+
           {/* Notre Mission Section */}
           <div className="mb-16">
-            <div className="max-w-3xl mx-auto text-center py-10 px-6 ">
+            <div className="max-w-3xl mx-auto text-center py-10 px-6">
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#25346f] mb-4">
                 Notre mission : <span className="text-[#5C5CBD]">Démocratiser la Robotique</span>
               </h2>
-              <p className="text-gray-600" style={{ fontFamily: 'Inter, system-ui, -apple-system, Roboto, "Helvetica Neue", Arial', fontSize: 18 }}>
-                Tekbot Academy s'engage à rendre l'apprentissage de la robotique accessible et
-                stimulant pour tous, des débutants aux experts. Nous croyons que la pratique est la clé
-                de la maîtrise.
+              <p
+                className="text-gray-600"
+                style={{ fontFamily: 'Inter, system-ui, -apple-system, Roboto, \"Helvetica Neue\", Arial', fontSize: 18 }}
+              >
+                Tekbot Academy s'engage à rendre l'apprentissage de la robotique accessible et stimulant pour tous, des
+                débutants aux experts. Nous croyons que la pratique est la clé de la maîtrise.
               </p>
             </div>
           </div>
-          <br></br>
-          <br></br>
-          <br></br>
 
           {/* Pourquoi Choisir Tekbot Academy */}
           <div className="max-w-7xl mx-auto mb-16 px-4">
@@ -85,8 +86,8 @@ export const Home = (): JSX.Element => {
                 </div>
                 <h3 className="text-lg font-bold text-[#25346f] mb-2">Modules Interactifs</h3>
                 <p className="text-gray-800 text-lg md:text-xl">
-                  Apprenez l'électronique, la mécanique et la programmation robotique à travers des leçons
-                  interactives et progressives.
+                  Apprenez l'électronique, la mécanique et la programmation robotique à travers des leçons interactives et
+                  progressives.
                 </p>
               </div>
 
@@ -111,37 +112,65 @@ export const Home = (): JSX.Element => {
               </div>
             </div>
           </div>
-
         </div>
       </section>
 
       {/* CTA Robot Section */}
-      <section className="relative py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/Rectangle 10.png')" }} />
-        {/* overlay for contrast */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2e2a86]/80 via-[#5C5CBD]/60 to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-6 flex items-center justify-center ">
-          <div className="w-full flex items-center relative">
-            <img src="/robot.png" alt="Robot" className="hidden md:block absolute object-contain pointer-events-none select-none z-0" style={{ width: '394px', height: '539px', left: '-140px' }} />
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/Rectangle 10.png"
+            alt="Fond gradient"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#2e2a86]/85 via-[#5C5CBD]/60 to-[#5C5CBD]/20" />
 
-            <div className="relative z-10 text-center text-white mx-auto px-6 py-12 max-w-3xl md:pl-[400px] lg:pl-[460px] md:pr-[340px] lg:pr-[400px]">
-              <h2 className="text-4xl font-extrabold mb-4">Prêt à Construire Votre Avenir ?</h2>
-              <p className="text-white opacity-95 mb-6" style={{ fontFamily: 'Inter, system-ui, -apple-system, Roboto, "Helvetica Neue", Arial', fontSize: 18}}>
-                Rejoignez des milliers d'apprenants et lancez-vous dans l'univers fascinant de la
-                robotique. Des fondamentaux aux projets avancés, tout est à portée de main.
+        <div className="relative w-full px-4 sm:px-8 lg:px-12">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 text-white">
+            <div className="w-full lg:w-auto flex justify-center lg:justify-start">
+              <img
+                src="/robot.png"
+                alt="Robot"
+                className="max-w-none w-64 sm:w-80 lg:w-[40px] xl:w-[260px] object-contain pointer-events-none select-none lg:-ml-24 xl:-ml-32"
+              />
+            </div>
+
+            <div className="text-center max-w-2xl mx-auto space-y-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight leading-tight">
+                Prêt à Construire Votre Avenir ?
+              </h2>
+              <p
+                className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed"
+                style={{ fontFamily: 'Inter, system-ui, -apple-system, Roboto, \"Helvetica Neue\", Arial' }}
+              >
+                Rejoignez des milliers d'apprenants et lancez-vous dans l'univers fascinant de la robotique. Des
+                fondamentaux aux projets avancés, tout est à portée de main.
               </p>
-              <div className="flex gap-4 justify-center">
-                <Link to="/courses" className="bg-[#57b3f7] hover:bg-[#2d9bf0] text-white rounded-lg px-6 py-3 font-semibold shadow">S'inscrire Maintenant</Link>
-                <Link to="/courses" className="border border-white/60 text-white rounded-lg px-6 py-3 font-medium">Voir tous les Cours</Link>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <Link
+                  to="/courses"
+                  className="inline-flex items-center justify-center gap-2 bg-[#57b3f7] hover:bg-[#2d9bf0] text-white rounded-lg px-6 py-3 sm:px-8 sm:py-4 font-semibold shadow-lg transition-colors"
+                >
+                  <Play className="w-4 h-4" />
+                  S'inscrire Maintenant
+                </Link>
+                <Link
+                  to="/courses"
+                  className="inline-flex items-center justify-center gap-2 border border-white/70 text-white rounded-lg px-6 py-3 sm:px-8 sm:py-4 font-medium hover:bg-white/10 transition-colors"
+                >
+                  Voir tous les Cours
+                </Link>
               </div>
             </div>
 
-            <img
-              src="/bras.png"
-              alt="Bras robot"
-              className="hidden md:block absolute object-contain pointer-events-none select-none z-0"
-              style={{ width: '454px', height: '409px', right: '-400px', top: '-200px', transform: 'rotate(02.42deg)' }}
-            />
+            <div className="w-full lg:w-auto flex justify-center lg:justify-end">
+              <img
+                src="/bras.png"
+                alt="Bras robot"
+                className="max-w-none w-56 sm:w-72 lg:w-[520px] xl:w-[640px] object-contain pointer-events-none select-none lg:-mr-24 xl:-mr-32"
+              />
+            </div>
           </div>
         </div>
       </section>

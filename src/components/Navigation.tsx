@@ -14,19 +14,19 @@ export const Navigation = (): JSX.Element => {
   ];
 
   return (
-  <nav className="fixed left-0 top-0 bg-[C7C7C7] shadow-lg border-r border-gray-100 z-50 sidebar-wide" style={{ width: 350, height: '100vh' }}>
-      <div className="flex flex-col h-full">
+    <nav className="fixed left-0 top-0 bg-white-200 shadow-lg border-r border-gray-100 z-50" style={{ width: 280, height: '100vh' }}>
+      <div className="flex flex-col h-full bg-white-200">
         {/* Logo */}
-      <div className="px-6 border-b border-gray-100" style={{ paddingTop: 12, paddingBottom: 12 }}>
+        <div className="px-6 border-b border-gray-300 bg-white-200" style={{ paddingTop: 12, paddingBottom: 12 }}>
           <Link to="/" className="flex items-center space-x-3">
             <img src="/logo.png" alt="Tekbot logo" className="h-auto" style={{ width: 160, height: 'auto' }} />
-        <span className="sr-only">Tekbot</span>
+            <span className="sr-only">Tekbot</span>
           </Link>
         </div>
-        
+
         {/* Navigation Items */}
-        <div className="flex-1 py-6 relative">
-      <div className="space-y-2 px-4">
+        <div className="flex-1 py-6 relative bg-[white]-200">
+          <div className="space-y-2 px-4">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.path;
@@ -34,10 +34,10 @@ export const Navigation = (): JSX.Element => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-150 ${
+                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-150 w-full ${
                     isActive
-                      ? 'bg-gray-100 text-[#25346f]'
-                      : 'text-[#6b7280] hover:bg-gray-50 hover:text-[#25346f]'
+                      ? 'bg-gray-300 text-[#25346f]'
+                      : 'text-[#6b7280] hover:bg-gray-300 hover:text-[#25346f]'
                   }`}
                 >
                   <Icon className={`w-6 h-6 ${isActive ? 'text-[#25346f]' : 'text-gray-400'}`} />
@@ -49,14 +49,13 @@ export const Navigation = (): JSX.Element => {
         </div>
 
         {/* Bottom Section */}
-        <div className="nav-bottom-sticky">
-          <div className="flex flex-col items-center">
-            <button style={{ width: 270, height: 47 }} className="bg-blue-500 text-white rounded-lg flex items-center justify-center gap-2">
+        <div className="bg-gray-200 border-t border-gray-300 p-4">
+          <div className="flex flex-col items-center space-y-2">
+            <button className="w-full bg-blue-500 text-white rounded-lg flex items-center justify-center gap-2 py-3 px-4 hover:bg-blue-600 transition-colors">
               <Settings className="w-4 h-4" />
               <span>Paramètres</span>
             </button>
-            <div style={{ height: 8 }} />
-            <button style={{ width: 270, height: 47 }} className="bg-red-400 text-white rounded-lg flex items-center justify-center gap-2">
+            <button className="w-full bg-red-400 text-white rounded-lg flex items-center justify-center gap-2 py-3 px-4 hover:bg-red-500 transition-colors">
               <span>⇢</span>
               <span>Déconnexion</span>
             </button>

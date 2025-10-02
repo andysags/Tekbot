@@ -10,11 +10,19 @@ html,body,#root, #app { height: 100%; }
 body { margin: 0; font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: #f8fafc; color: #111827; }
 
 /* small helper for sticky bottom */
-.nav-bottom-sticky { position: absolute; left: 0; right: 0; bottom: 380px; padding: 0 18px; }
+.nav-bottom-sticky {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px 18px 24px;
+  background: inherit;
+}
 
 .sidebar-wide { width: 18rem; }
 
 /* app wrapper when sidebar is present */
+.app-with-sidebar { margin-left: 280px; }
 
 @media (max-width: 768px) {
 	.app-with-sidebar { margin-left: 0; }
