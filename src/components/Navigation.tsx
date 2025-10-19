@@ -9,7 +9,7 @@ export const Navigation = (): JSX.Element => {
     { path: '/courses', label: 'Modules', icon: BookOpen },
     { path: '/exercises', label: 'Exercices', icon: Play },
     { path: '/competitions', label: 'Compétitions', icon: Award },
-    { path: '/community', label: 'Communauté', icon: Users }
+  { path: '/communauties', label: 'Communauté', icon: Users }
   ];
 
   return (

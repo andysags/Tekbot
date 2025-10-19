@@ -18,6 +18,7 @@ import Exercise7 from './pages/Exercise7';
 import Exercise8 from './pages/Exercise8';
 import Exercise9 from './pages/Exercise9';
 import Footer from './components/Footer';
+import Communauties from './pages/communauties';
 
 
 function AppWrapper() {
@@ -41,6 +42,7 @@ function AppWrapper() {
             <Route path="/exercises/8" element={<Exercise8 />} />
             <Route path="/exercises/9" element={<Exercise9 />} />
         <Route path="/about" element={<About />} />
+  <Route path="/communauties" element={<Communauties />} />
   <Route path="/competitions" element={<Competition />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
