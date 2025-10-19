@@ -10,7 +10,7 @@ export default function Footer(): JSX.Element {
             <Link to="/" className="text-xs text-gray-400 hover:text-gray-600">Tekbot</Link>
             <Link to="/products" className="text-xs text-gray-400 hover:text-gray-600">Produit</Link>
             <Link to="/support" className="text-xs text-gray-400 hover:text-gray-600">Support</Link>
-          </div>
+          
 
           <div className="flex items-center space-x-3">
             <a aria-label="linkedin" href="#" className="text-gray-400 hover:text-gray-600 opacity-60">
