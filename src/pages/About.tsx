@@ -150,3 +150,5 @@ export const About = (): JSX.Element => {
     </div>
   );
 };
+
+export default About;
