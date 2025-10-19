@@ -1,5 +1,3 @@
-import ExerciseResult from "./Exercise1";
-
 export const Exercise = (): JSX.Element => {
   return (
   <div className="min-h-screen bg-neutral-50 ml-[240px]">

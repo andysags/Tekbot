@@ -7,6 +7,7 @@ import About from './pages/About';
 import { Contact } from './pages/Contact';
 import Login from './pages/Login';
 import { Exercise } from './pages/Exercise';
+import Competition from './pages/Competition';
 import ExerciseResult from './pages/Exercise1';
 import Exercise2 from './pages/Exercise2';
 import Exercise3 from './pages/Exercise3';
@@ -40,6 +41,7 @@ function AppWrapper() {
             <Route path="/exercises/8" element={<Exercise8 />} />
             <Route path="/exercises/9" element={<Exercise9 />} />
         <Route path="/about" element={<About />} />
+  <Route path="/competitions" element={<Competition />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
       </Routes>
